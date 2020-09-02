@@ -1,0 +1,27 @@
+<div class="container">
+    
+    <h3>Student Results
+        <div>
+            <button class="btn btn-success" routerLink="/student-admission">Admission Form</button>
+        </div>
+    </h3>
+	<hr>
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Name</th>
+				<th>Roll Number</th>
+				<th>Marks</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let student of students"  [ngStyle]="{color: fontColor(student.marks) }">
+				<td>{{ student.name[0].toUpperCase()+student.name.substr(1) }}</td>
+				<td>{{ student.rollNumber }}</td>
+				<td style="text-align: right;">{{ sum(student.marks) }}</td>
+				<td>{{ passStatus }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

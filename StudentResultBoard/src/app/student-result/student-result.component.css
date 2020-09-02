@@ -1,0 +1,10 @@
+.container {
+    margin-top: 5%;
+}
+.container h3 {
+    display: flex;
+    justify-content: space-between;
+}
+.container table tr th {
+    font-style: italic;
+}

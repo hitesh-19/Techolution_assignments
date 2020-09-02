@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>Student Admission Form</h3>
+    <div class="inner-container">
+        <form #f="ngForm">
+            <div class="inner-form">
+                <div class="form-group" ngModelGroup="studentData" #userData="ngModelGroup">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstname" ngModel #firstname="ngModel" pattern="[a-zA-Z]{3,20}" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastname" ngModel #lastname="ngModel" pattern="[a-zA-Z]{3,20}" required>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <input type="text" class="form-control" id="class" name="class" ngModel #class="ngModel" pattern="[a-zA-Z0-9]*" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year of Passing</label>
+                    <input type="number" class="form-control" id="year" name="year" ngModel #year="ngModel" min="1" max="4" required>
+                </div>
+                <div class="form-group">
+                    <label for="percentage">Percentage</label>
+                    <input type="text" class="form-control" id="percentage" name="percentage" ngModel #percentage="ngModel" pattern="[0-9]{1,2}" required>
+                </div>
+                <button class="btn btn-primary" [disabled]="f.invalid">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-danger" routerLink="/student-result">Back</button>  
+            </div>
+        </form>
+    </div>
+</div>
